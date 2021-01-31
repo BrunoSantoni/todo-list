@@ -21,7 +21,7 @@ import { styles } from '@styles/components/Modal';
 interface IModalProps {
   isOpen: boolean;
   type: string;
-  taskInfo: ITask;
+  taskInfo?: ITask;
   handleClose(): void;
 }
 
@@ -69,6 +69,7 @@ const Modal: React.FC<IModalProps> = ({
 
       Swal.fire('Sucesso', 'Tarefa cadastrada com sucesso', 'success');
     } catch (err) {
+      handleClose();
       Swal.fire('Erro', 'Erro ao cadastrar a tarefa, tente novamente', 'error');
     }
   }, [dispatch, handleClose]);
@@ -101,9 +102,10 @@ const Modal: React.FC<IModalProps> = ({
 
       Swal.fire('Sucesso', response.data.mensagem, 'success');
     } catch (err) {
+      handleClose();
       Swal.fire('Erro', 'Erro ao atualizar a tarefa, tente novamente', 'error');
     }
-  }, [selectedOption, dispatch, handleClose, taskInfo.id]);
+  }, [selectedOption, dispatch, handleClose]);
 
   function handleTask() {
     if (type === 'edit') {
