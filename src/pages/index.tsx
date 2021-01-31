@@ -67,8 +67,10 @@ const Home: React.FC<IHomeProps> = ({ allTasksList }) => {
   const handleTaskSearch = useCallback(() => {
     const keyword: string = searchRef.current.value;
 
+    const parsedKeyword: string = keyword.toLowerCase().trim();
+
     const newlyDisplayed = tasks.filter((task: ITask) =>
-      task.titulo.includes(keyword),
+      task.titulo.toLowerCase().includes(parsedKeyword),
     );
     setBeingDisplayed(newlyDisplayed);
   }, [tasks]);
