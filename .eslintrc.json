@@ -31,7 +31,7 @@
       "prettier/prettier": "error",
       "react-hooks/rules-of-hooks": "error",
       "react/prop-types": "off",
-
+      "react-hooks/exhaustive-deps": "warn",
       "no-use-before-define": "off",
       "@typescript-eslint/no-use-before-define": ["error"],
       "react/jsx-filename-extension": [1, { "extensions": [".tsx"] }],

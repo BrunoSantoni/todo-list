@@ -16,6 +16,12 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
+    "baseUrl": "./src",
+    "paths": {
+      "@interfaces/*": ["interfaces/*"],
+      "@redux/*": ["store/*"],
+      "@styles/*": ["styles/*"],
+    },
     "jsx": "preserve"
   },
   "include": [
