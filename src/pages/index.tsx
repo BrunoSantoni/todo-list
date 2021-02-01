@@ -114,13 +114,11 @@ const Home: React.FC<IHomeProps> = ({ allTasksList }) => {
           <Typography variant="h3">Tarefas</Typography>
 
           {beingDisplayed.map(task => (
-            <>
-              <TaskCard
-                key={task.id}
-                task={task}
-                openEditModal={() => handleModalOpen('edit', task)}
-              />
-            </>
+            <TaskCard
+              key={task.id}
+              task={task}
+              openEditModal={() => handleModalOpen('edit', task)}
+            />
           ))}
 
           <Button
